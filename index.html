@@ -157,7 +157,7 @@
             renderTable();
         }
 
-        // Funzione per invertire l'ordine (crescente/decrescente) al click sull'intestazione
+        // Funzione per invertire l'ordine (crescente/decrescente) al clic sulla colonna "Start Date"
         function toggleSortOrder() {
             sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';  // Inverte l'ordine
             sortWars();  // Ordina nuovamente
@@ -187,7 +187,7 @@
             <table>
                 <tr>
                     <th onclick="toggleSortOrder()">Countries Involved</th>
-                    <th>Start Date</th>
+                    <th id="startDateColumn" onclick="toggleSortOrder()">Start Date</th>
                     <th>Duration</th>
                     <th>Description</th>
                 </tr>
