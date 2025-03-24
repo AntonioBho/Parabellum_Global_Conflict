@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parabellum</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -92,8 +93,7 @@
 
         async function fetchWars() {
             try {
-                // Carica il file JSON delle guerre (assicurati che wars.json sia nella stessa cartella)
-                const response = await fetch('wars.json');
+                const response = await fetch('https://api.example.com/wars'); // Sostituire con un'API reale
                 wars = await response.json();
                 renderTable();
             } catch (error) {
@@ -150,7 +150,17 @@
 <body>
     <h1>Parabellum</h1>
     <div class="container">
-        <div class="ads">📢 Spazio Pubblicitario</div>
+        <div class="ads">
+            <!-- Pubblicità di Google AdSense -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8712964960463408"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
         <div class="table-container">
             <label for="warsPerPage">Mostra:</label>
             <select id="warsPerPage" onchange="changeWarsPerPage(this.value)">
@@ -171,7 +181,17 @@
                 <button onclick="changePage('next')">Successivo ➡️</button>
             </div>
         </div>
-        <div class="ads">📢 Spazio Pubblicitario</div>
+        <div class="ads">
+            <!-- Pubblicità di Google AdSense -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8712964960463408"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </div>
 </body>
 </html>
