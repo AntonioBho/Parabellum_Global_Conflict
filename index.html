@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parabellum</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,10 +19,6 @@
             align-items: flex-start;
             margin: 20px;
             animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         .ads {
             width: 20%;
@@ -93,7 +88,7 @@
 
         async function fetchWars() {
             try {
-                const response = await fetch('https://api.example.com/wars'); // Sostituire con un'API reale
+                const response = await fetch('wars.json'); // A questo punto il file wars.json deve essere presente
                 wars = await response.json();
                 renderTable();
             } catch (error) {
@@ -151,14 +146,11 @@
     <h1>Parabellum</h1>
     <div class="container">
         <div class="ads">
-            <!-- Pubblicità di Google AdSense -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8712964960463408"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"></ins>
+            <!-- Pubblicità Google Adsense -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
             <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
         <div class="table-container">
@@ -182,14 +174,11 @@
             </div>
         </div>
         <div class="ads">
-            <!-- Pubblicità di Google AdSense -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-8712964960463408"
-                 data-ad-slot="1234567890"
-                 data-ad-format="auto"></ins>
+            <!-- Pubblicità Google Adsense -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
             <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
         </div>
     </div>
