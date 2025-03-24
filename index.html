@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabellum</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .ads {
+            width: 20%;
+            height: 600px;
+            background-color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .ads:hover {
+            transform: scale(1.05);
+        }
+        .table-container {
+            width: 60%;
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #555;
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #444;
+        }
+        tr:nth-child(even) {
+            background-color: #3a3a3a;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .pagination button:hover {
+            background-color: #666;
+        }
+    </style>
+    <script>
+        let wars = [];
+        let currentPage = 1;
+        let warsPerPage = 10;
+
+        async function fetchWars() {
+            try {
+                // Carica il file JSON delle guerre (assicurati che wars.json sia nella stessa cartella)
+                const response = await fetch('wars.json');
+                wars = await response.json();
+                renderTable();
+            } catch (error) {
+                console.error('Errore nel recupero delle guerre:', error);
+            }
+        }
+
+        function updateDurations(startDate) {
+            const now = new Date();
+            const diff = now - new Date(startDate);
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            return `${years} anni - ${months} mesi - ${days} giorni - ${hours} ore`;
+        }
+
+        function renderTable() {
+            const tableBody = document.getElementById('warTableBody');
+            tableBody.innerHTML = '';
+            const start = (currentPage - 1) * warsPerPage;
+            const end = start + warsPerPage;
+            const paginatedWars = wars.slice(start, end);
+
+            paginatedWars.forEach(war => {
+                const row = `<tr>
+                    <td>${war.countries}</td>
+                    <td>${war.start_date}</td>
+                    <td>${updateDurations(war.start_date)}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function changePage(direction) {
+            const totalPages = Math.ceil(wars.length / warsPerPage);
+            if (direction === 'next' && currentPage < totalPages) {
+                currentPage++;
+            } else if (direction === 'prev' && currentPage > 1) {
+                currentPage--;
+            }
+            renderTable();
+        }
+
+        function changeWarsPerPage(value) {
+            warsPerPage = parseInt(value);
+            currentPage = 1;
+            renderTable();
+        }
+
+        window.onload = fetchWars;
+    </script>
+</head>
+<body>
+    <h1>Parabellum</h1>
+    <div class="container">
+        <div class="ads">📢 Spazio Pubblicitario</div>
+        <div class="table-container">
+            <label for="warsPerPage">Mostra:</label>
+            <select id="warsPerPage" onchange="changeWarsPerPage(this.value)">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+            <table>
+                <tr>
+                    <th>Paesi Coinvolti</th>
+                    <th>Data di Inizio</th>
+                    <th>Durata</th>
+                </tr>
+                <tbody id="warTableBody"></tbody>
+            </table>
+            <div class="pagination">
+                <button onclick="changePage('prev')">⬅️ Precedente</button>
+                <button onclick="changePage('next')">Successivo ➡️</button>
+            </div>
+        </div>
+        <div class="ads">📢 Spazio Pubblicitario</div>
+    </div>
+</body>
+</html>

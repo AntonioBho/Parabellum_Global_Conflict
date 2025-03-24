@@ -1,0 +1,17 @@
+[
+  {
+    "countries": "Russia vs Ucraina",
+    "start_date": "2022-02-24",
+    "deaths": 100000
+  },
+  {
+    "countries": "Etiopia vs Tigray",
+    "start_date": "2020-11-04",
+    "deaths": 50000
+  },
+  {
+    "countries": "Siria",
+    "start_date": "2011-03-15",
+    "deaths": 500000
+  }
+]
