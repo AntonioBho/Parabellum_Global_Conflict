@@ -55,7 +55,7 @@
         }
         th {
             background-color: #444;
-            cursor: pointer; /* Aggiunge un cursore per mostrare che la colonna è cliccabile */
+            cursor: pointer;
         }
         tr:nth-child(even) {
             background-color: #3a3a3a;
@@ -90,13 +90,13 @@
         let wars = [];
         let currentPage = 1;
         let warsPerPage = 10;
-        let sortOrder = 'asc';  // Variabile per tenere traccia dell'ordine di ordinamento
+        let sortOrder = 'asc';
 
         async function fetchWars() {
             try {
                 const response = await fetch('wars.json');
                 wars = await response.json();
-                sortWars();  // Ordinare le guerre dopo averle recuperate
+                sortWars();
                 renderTable();
             } catch (error) {
                 console.error('Error fetching wars:', error);
@@ -113,16 +113,11 @@
             return `${years} years - ${months} months - ${days} days - ${hours} hours`;
         }
 
-        // Funzione per ordinare le guerre in base alla data di inizio
         function sortWars() {
             wars.sort((a, b) => {
                 const dateA = new Date(a.start_date);
                 const dateB = new Date(b.start_date);
-                if (sortOrder === 'asc') {
-                    return dateA - dateB;  // Ordinamento crescente
-                } else {
-                    return dateB - dateA;  // Ordinamento decrescente
-                }
+                return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
             });
         }
 
@@ -160,11 +155,10 @@
             renderTable();
         }
 
-        // Funzione per invertire l'ordine (crescente/decrescente) al clic sulla colonna "Start Date"
         function toggleSortOrder() {
-            sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';  // Inverte l'ordine
-            sortWars();  // Ordina nuovamente
-            renderTable();  // Rende la tabella dopo l'ordinamento
+            sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+            sortWars();
+            renderTable();
         }
 
         window.onload = fetchWars;
