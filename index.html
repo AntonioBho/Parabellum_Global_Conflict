@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-8712964960463408"> <!-- Meta tag per Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-8712964960463408">
     <title>Parabellum</title>
     <style>
         body {
@@ -89,11 +89,11 @@
 
         async function fetchWars() {
             try {
-                const response = await fetch('wars.json'); // A questo punto il file wars.json deve essere presente
+                const response = await fetch('wars.json');
                 wars = await response.json();
                 renderTable();
             } catch (error) {
-                console.error('Errore nel recupero delle guerre:', error);
+                console.error('Error fetching wars:', error);
             }
         }
 
@@ -104,7 +104,7 @@
             const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
             const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            return `${years} anni - ${months} mesi - ${days} giorni - ${hours} ore`;
+            return `${years} years - ${months} months - ${days} days - ${hours} hours`;
         }
 
         function renderTable() {
@@ -119,6 +119,7 @@
                     <td>${war.countries}</td>
                     <td>${war.start_date}</td>
                     <td>${updateDurations(war.start_date)}</td>
+                    <td>${war.description}</td>
                 </tr>`;
                 tableBody.innerHTML += row;
             });
@@ -147,7 +148,6 @@
     <h1>Parabellum</h1>
     <div class="container">
         <div class="ads">
-            <!-- Pubblicità Google Adsense -->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
             <script>
@@ -155,7 +155,7 @@
             </script>
         </div>
         <div class="table-container">
-            <label for="warsPerPage">Mostra:</label>
+            <label for="warsPerPage">Show:</label>
             <select id="warsPerPage" onchange="changeWarsPerPage(this.value)">
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -163,19 +163,19 @@
             </select>
             <table>
                 <tr>
-                    <th>Paesi Coinvolti</th>
-                    <th>Data di Inizio</th>
-                    <th>Durata</th>
+                    <th>Countries Involved</th>
+                    <th>Start Date</th>
+                    <th>Duration</th>
+                    <th>Description</th>
                 </tr>
                 <tbody id="warTableBody"></tbody>
             </table>
             <div class="pagination">
-                <button onclick="changePage('prev')">⬅️ Precedente</button>
-                <button onclick="changePage('next')">Successivo ➡️</button>
+                <button onclick="changePage('prev')">⬅️ Previous</button>
+                <button onclick="changePage('next')">Next ➡️</button>
             </div>
         </div>
         <div class="ads">
-            <!-- Pubblicità Google Adsense -->
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
             <script>
