@@ -1,0 +1,16 @@
+[
+  {
+    "countries": "Vietnam War",
+    "start_date": "1955-11-01",
+    "end_date": "1975-04-30",
+    "description": "A conflict between North and South Vietnam, involving US intervention.",
+    "deaths": "3,000,000"
+  },
+  {
+    "countries": "World War II",
+    "start_date": "1939-09-01",
+    "end_date": "1945-09-02",
+    "description": "A global war involving most world powers.",
+    "deaths": "70,000,000"
+  }
+]
