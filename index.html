@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-8712964960463408">
-    <meta name="google-site-verification" content="efe6EDgaad8zwB-J-_UQC7zaiY5aW20gr4Kac_bGZPA" />
-    <meta name="description" content="Scopri le guerre in corso e le loro descrizioni su Parabellum. Informazioni aggiornate su conflitti globali.">
-    <meta name="keywords" content="guerre in corso, conflitti globali, guerre 2025, guerre mondiali">    
     <title>Parabellum - Current Global Conflict</title>
     <style>
         body {
@@ -19,23 +15,15 @@
         }
         .container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: center;
             margin: 20px;
         }
-        .ads {
-            width: 20%;
-            height: 600px;
-            background-color: #333;
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-        }
         .table-container {
-            width: 60%;
+            width: 80%;
             background-color: #2c2c2c;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
         table {
             width: 100%;
@@ -51,25 +39,19 @@
             cursor: pointer;
         }
         .switch-button {
-            background-color: #444;
-            color: white;
+            background-color: #ffcc00;
+            color: black;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
+            font-size: 1em;
             margin-bottom: 20px;
-        }
-        footer {
-            margin-top: 50px;
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
         }
     </style>
     <script>
         let wars = [];
         let currentFile = 'wars.json';
-
+        
         async function fetchWars() {
             try {
                 const response = await fetch(currentFile);
@@ -80,24 +62,49 @@
             }
         }
 
+        function updateDurations(startDate, endDate) {
+            if (endDate) {
+                return new Date(endDate).toLocaleDateString('it-IT');
+            }
+            const now = new Date();
+            const diff = now - new Date(startDate);
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            return `${years}y ${months}m ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
         function renderTable() {
             const tableBody = document.getElementById('warTableBody');
             tableBody.innerHTML = '';
             wars.forEach(war => {
                 const row = `<tr>
                     <td>${war.countries}</td>
-                    <td>${war.start_date}</td>
-                    <td>${war.end_date || 'Ongoing'}</td>
-                    <td>${war.deaths || 'N/A'}</td>
+                    <td>${new Date(war.start_date).toLocaleDateString('it-IT')}</td>
+                    <td id="duration-${war.start_date}">${updateDurations(war.start_date, war.end_date)}</td>
                     <td>${war.description}</td>
                 </tr>`;
                 tableBody.innerHTML += row;
+            });
+            setInterval(updateWarDurations, 1000);
+        }
+
+        function updateWarDurations() {
+            wars.forEach(war => {
+                if (!war.end_date) {
+                    const durationElement = document.getElementById(`duration-${war.start_date}`);
+                    if (durationElement) {
+                        durationElement.innerHTML = updateDurations(war.start_date, null);
+                    }
+                }
             });
         }
 
         function toggleWars() {
             currentFile = currentFile === 'wars.json' ? 'endwars.json' : 'wars.json';
-            document.getElementById('switchButton').textContent = currentFile === 'wars.json' ? 'Show Ended Wars' : 'Show Ongoing Wars';
             fetchWars();
         }
 
@@ -107,27 +114,18 @@
 <body>
     <h1>Parabellum - Current Global Conflict</h1>
     <p class="subtitle">"Peace is not just a dream; it is our collective responsibility."</p>
-    <button id="switchButton" class="switch-button" onclick="toggleWars()">Show Ended Wars</button>
+    <button class="switch-button" onclick="toggleWars()">Switch Data</button>
     <div class="container">
-        <div class="ads">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="2310262702" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
         <div class="table-container">
             <table>
                 <tr>
                     <th>Countries Involved</th>
                     <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Deaths</th>
+                    <th>Duration / End Date</th>
                     <th>Description</th>
                 </tr>
                 <tbody id="warTableBody"></tbody>
             </table>
-        </div>
-        <div class="ads">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="2310262702" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
     </div>
     <footer>
