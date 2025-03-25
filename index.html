@@ -75,12 +75,16 @@
         let currentFile = 'wars.json';
         let recordsPerPage = 10;
         let currentPage = 1;
+        let sortOrderStartDate = true;
+        let sortOrderDuration = true;
+
+
 
         async function fetchWars() {
             try {
                 const response = await fetch(currentFile);
                 wars = await response.json();
-                sortWars();
+                sortWarsByStartDate();
                 renderTable();
                 setInterval(updateDurations, 1000);
             } catch (error) {
@@ -94,8 +98,19 @@
             fetchWars();
         }
 
-        function sortWars() {
-            wars.sort((a, b) => new Date(a.start_date) - new Date(b.start_date));
+        function sortWarsByStartDate() {
+            wars.sort((a, b) => sortOrderStartDate ? new Date(a.start_date) - new Date(b.start_date) : new Date(b.start_date) - new Date(a.start_date));
+            sortOrderStartDate = !sortOrderStartDate;
+            renderTable();
+        }
+
+        function sortWarsByDuration() {
+            wars.sort((a, b) => {
+                const durationA = a.end_date ? new Date(a.end_date) - new Date(a.start_date) : new Date() - new Date(a.start_date);
+                const durationB = b.end_date ? new Date(b.end_date) - new Date(b.start_date) : new Date() - new Date(b.start_date);
+                return sortOrderDuration ? durationB - durationA : durationA - durationB;
+            });
+            sortOrderDuration = !sortOrderDuration;
             renderTable();
         }
 
@@ -178,8 +193,8 @@
                   <thead>
                     <tr>
                         <th>Countries Involved</th>
-                        <th>Start Date</th>
-                        <th>End Date / Duration</th>
+                        <th onclick="sortWarsByStartDate()">Start Date</th>
+                        <th onclick="sortWarsByDuration()">End Date / Duration</th>
                         <th>Description</th>
                     </tr>
                 </thead>
