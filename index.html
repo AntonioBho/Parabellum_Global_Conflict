@@ -105,12 +105,16 @@
 
         function updateDurations(startDate) {
             const now = new Date();
-            const diff = now - new Date(startDate);
-            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            return `${years} years - ${months} months - ${days} days - ${hours} hours`;
+            const diff = now - new Date(startDate); // Calcola la differenza in millisecondi
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365)); // Anni
+            const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30)); // Mesi
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)); // Giorni
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Ore
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)); // Minuti
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000); // Secondi
+
+            return `${years} years - ${months} months - ${days} days - ${hours} hours - ${minutes} minutes - ${seconds} seconds`;
         }
 
         function sortWars() {
@@ -132,10 +136,22 @@
                 const row = `<tr>
                     <td>${war.countries}</td>
                     <td>${war.start_date}</td>
-                    <td>${updateDurations(war.start_date)}</td>
+                    <td id="duration-${war.start_date}">${updateDurations(war.start_date)}</td>
                     <td>${war.description}</td>
                 </tr>`;
                 tableBody.innerHTML += row;
+            });
+
+            // Update the duration every second
+            setInterval(updateWarDurations, 1000);
+        }
+
+        function updateWarDurations() {
+            wars.forEach(war => {
+                const durationElement = document.getElementById(`duration-${war.start_date}`);
+                if (durationElement) {
+                    durationElement.innerHTML = updateDurations(war.start_date);
+                }
             });
         }
 
@@ -168,8 +184,13 @@
     <h1>Parabellum - Current Global Conflict</h1>
     <div class="container">
         <div class="ads">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+            <!-- Annuncio Verticale -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8712964960463408"
+                 data-ad-slot="2310262702"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
@@ -196,8 +217,13 @@
             </div>
         </div>
         <div class="ads">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408" crossorigin="anonymous"></script>
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8712964960463408" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+            <!-- Annuncio Verticale -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-8712964960463408"
+                 data-ad-slot="2310262702"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
