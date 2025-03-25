@@ -1,147 +1,152 @@
 [
-  {
-    "countries": "Russia vs Ukraine",
-    "start_date": "2022-02-24",
-    "description": "The war began when Russia launched a full-scale invasion of Ukraine, resulting in heavy fighting and significant casualties on both sides."
-  },
-  {
-    "countries": "Yemen Civil War",
-    "start_date": "2014-03-19",
-    "description": "Yemen has been in a civil war since 2014, involving the Houthi rebels and the internationally recognized government, leading to immense humanitarian suffering."
-  },
-  {
-    "countries": "Afghanistan Conflict",
-    "start_date": "2001-10-07",
-    "description": "A protracted conflict between the Taliban and the Afghan government forces, with significant international involvement, leading to instability and casualties."
-  },
-  {
-    "countries": "Syria Civil War",
-    "start_date": "2011-03-15",
-    "description": "A devastating civil war in Syria, involving the government, rebel groups, and ISIS forces, with significant involvement from foreign powers."
-  },
-  {
-    "countries": "Tigray War (Ethiopia)",
-    "start_date": "2020-11-04",
-    "description": "The conflict in the Tigray region of Ethiopia has been marked by violent clashes between Tigray forces and the Ethiopian government, with massive displacement and civilian suffering."
-  },
-  {
-    "countries": "Somali Civil War",
-    "start_date": "1991-12-26",
-    "description": "Ongoing civil war in Somalia, where the government, rebel factions, and international forces clash with the militant group al-Shabaab."
-  },
-  {
-    "countries": "Central African Republic Civil War",
-    "start_date": "2012-12-10",
-    "description": "A violent civil war in the Central African Republic between the government and various rebel groups, exacerbated by ethnic and religious violence."
-  },
-  {
-    "countries": "South Sudanese Civil War",
-    "start_date": "2013-12-15",
-    "description": "A brutal civil war in South Sudan, which involves ethnic groups and has led to significant human rights violations and displacement."
-  },
-  {
-    "countries": "Israeli-Palestinian Conflict",
-    "start_date": "1948-05-15",
-    "description": "An ongoing territorial conflict between Israel and the Palestinians, involving both military clashes and a long-standing political and social struggle."
-  },
-  {
-    "countries": "Myanmar Civil War",
-    "start_date": "2021-02-01",
-    "description": "After a military coup in Myanmar, widespread violence erupted between the junta and various resistance groups, exacerbating an ongoing civil war."
-  },
-  {
-    "countries": "India-Pakistan Conflict (Kashmir)",
-    "start_date": "1947-10-15",
-    "description": "A territorial dispute between India and Pakistan over the Kashmir region, with frequent clashes and military confrontations."
-  },
-  {
-    "countries": "Libyan Civil War",
-    "start_date": "2014-05-16",
-    "description": "A civil war in Libya involving multiple factions vying for control, complicated by foreign involvement and various armed groups."
-  },
-  {
-    "countries": "Iraq War",
-    "start_date": "2003-03-20",
-    "description": "The Iraq war initially started with the US invasion, but the conflict has continued through the rise of ISIS and local insurgencies."
-  },
-  {
-    "countries": "Nagorno-Karabakh Conflict",
-    "start_date": "1988-02-01",
-    "description": "An ethnic and territorial conflict between Armenia and Azerbaijan, which flared up with large-scale violence in 2020 and continues with sporadic clashes."
-  },
-  {
-    "countries": "Philippine Insurgency",
-    "start_date": "1969-03-01",
-    "description": "The Philippine government has been dealing with insurgencies from groups like the MILF (Moro Islamic Liberation Front) and Abu Sayyaf for decades."
-  },
-  {
-    "countries": "Mali Conflict",
-    "start_date": "2012-01-17",
-    "description": "An armed conflict in Mali, involving separatists, Islamist groups, and the Malian government, exacerbated by French and UN military intervention."
-  },
-  {
-    "countries": "Sahel Conflict",
-    "start_date": "2012-01-01",
-    "description": "An ongoing conflict in the Sahel region of Africa, where multiple jihadist groups operate, including in Mali, Burkina Faso, and Niger."
-  },
-  {
-    "countries": "Mexico's Drug War",
-    "start_date": "2006-12-11",
-    "description": "A violent conflict between Mexican cartels and government forces, with widespread criminal violence and significant impact on civilian populations."
-  },
-  {
-    "countries": "Democratic Republic of Congo Conflict",
-    "start_date": "1998-08-02",
-    "description": "A complex war involving multiple armed groups, foreign involvement, and a humanitarian crisis in the eastern DRC."
-  },
-  {
-    "countries": "Colombian Armed Conflict",
-    "start_date": "1964-05-27",
-    "description": "A longstanding conflict involving the Colombian government, paramilitary groups, and left-wing guerilla movements, such as the FARC."
-  },
-  {
-    "countries": "Afro-Colombian Violence",
-    "start_date": "2000-01-01",
-    "description": "Ongoing violence targeting Afro-Colombians, including armed conflicts with government forces and paramilitaries."
-  },
-  {
-    "countries": "Kurdish-Turkish Conflict",
-    "start_date": "1984-08-15",
-    "description": "The Turkish government and the Kurdish militant group PKK have been in conflict for decades, with ongoing violence and instability in southeastern Turkey."
-  },
-  {
-    "countries": "Venezuelan Crisis",
-    "start_date": "2013-04-01",
-    "description": "Political and economic turmoil in Venezuela that has led to violent protests, widespread government repression, and a humanitarian crisis."
-  },
-  {
-    "countries": "Honduran Violence",
-    "start_date": "2009-06-28",
-    "description": "Ongoing violence in Honduras, largely driven by drug trafficking and gang violence, leading to high levels of homicide and instability."
-  },
-  {
-    "countries": "Chad Civil War",
-    "start_date": "2005-04-13",
-    "description": "A civil war in Chad with rebels fighting against the government, exacerbated by regional instability and cross-border militancy."
-  },
-  {
-    "countries": "Sudanese Conflict",
-    "start_date": "2013-12-15",
-    "description": "A conflict between the Sudanese government and rebel factions, with international involvement and significant humanitarian consequences."
-  },
-  {
-    "countries": "Jamaica's Gang Violence",
-    "start_date": "2000-01-01",
-    "description": "Widespread violence in Jamaica, mostly driven by gang conflicts, often involving territorial disputes and drug trafficking."
-  },
-  {
-    "countries": "Congo-Brazzaville Civil War",
-    "start_date": "1993-06-15",
-    "description": "The conflict in Congo-Brazzaville between the government and opposition forces, often fueled by ethnic tensions and foreign intervention."
-  },
-  {
-    "countries": "Darfur Conflict",
-    "start_date": "2003-02-26",
-    "description": "A violent conflict in the Darfur region of Sudan, with government-backed militias fighting rebel groups, leading to numerous deaths and displacement."
-  }
+    {
+        "countries": "Russia vs Ukraine",
+        "start_date": "2022-02-24",
+        "description": "The war began when Russia launched a full-scale invasion of Ukraine, resulting in heavy fighting and significant casualties on both sides."
+    },
+    {
+        "countries": "Yemen Civil War",
+        "start_date": "2014-03-19",
+        "description": "Yemen has been in a civil war since 2014, involving the Houthi rebels and the internationally recognized government, leading to immense humanitarian suffering."
+    },
+    {
+        "countries": "Afghanistan Conflict",
+        "start_date": "2001-10-07",
+        "description": "A protracted conflict between the Taliban and the Afghan government forces, with significant international involvement, leading to instability and casualties."
+    },
+    {
+        "countries": "Syria Civil War",
+        "start_date": "2011-03-15",
+        "description": "A devastating civil war in Syria, involving the government, rebel groups, and ISIS forces, with significant involvement from foreign powers."
+    },
+    {
+        "countries": "Tigray War (Ethiopia)",
+        "start_date": "2020-11-04",
+        "description": "The conflict in the Tigray region of Ethiopia has been marked by violent clashes between Tigray forces and the Ethiopian government, with massive displacement and civilian suffering."
+    },
+    {
+        "countries": "Somali Civil War",
+        "start_date": "1991-12-26",
+        "description": "Ongoing civil war in Somalia, where the government, rebel factions, and international forces clash with the militant group al-Shabaab."
+    },
+    {
+        "countries": "Central African Republic Civil War",
+        "start_date": "2012-12-10",
+        "description": "A violent civil war in the Central African Republic between the government and various rebel groups, exacerbated by ethnic and religious violence."
+    },
+    {
+        "countries": "South Sudanese Civil War",
+        "start_date": "2013-12-15",
+        "description": "A brutal civil war in South Sudan, which involves ethnic groups and has led to significant human rights violations and displacement."
+    },
+    {
+        "countries": "Israeli-Palestinian Conflict",
+        "start_date": "1948-05-15",
+        "description": "An ongoing territorial conflict between Israel and the Palestinians, involving both military clashes and a long-standing political and social struggle."
+    },
+    {
+        "countries": "Myanmar Civil War",
+        "start_date": "2021-02-01",
+        "description": "After a military coup in Myanmar, widespread violence erupted between the junta and various resistance groups, exacerbating an ongoing civil war."
+    },
+    {
+        "countries": "India-Pakistan Conflict (Kashmir)",
+        "start_date": "1947-10-15",
+        "description": "A territorial dispute between India and Pakistan over the Kashmir region, with frequent clashes and military confrontations."
+    },
+    {
+        "countries": "Libyan Civil War",
+        "start_date": "2014-05-16",
+        "description": "A civil war in Libya involving multiple factions vying for control, complicated by foreign involvement and various armed groups."
+    },
+    {
+        "countries": "Iraq War",
+        "start_date": "2003-03-20",
+        "description": "The Iraq war initially started with the US invasion, but the conflict has continued through the rise of ISIS and local insurgencies."
+    },
+    {
+        "countries": "Nagorno-Karabakh Conflict",
+        "start_date": "1988-02-01",
+        "description": "An ethnic and territorial conflict between Armenia and Azerbaijan, which flared up with large-scale violence in 2020 and continues with sporadic clashes."
+    },
+    {
+        "countries": "Philippine Insurgency",
+        "start_date": "1969-03-01",
+        "description": "The Philippine government has been dealing with insurgencies from groups like the MILF (Moro Islamic Liberation Front) and Abu Sayyaf for decades."
+    },
+    {
+        "countries": "Mali Conflict",
+        "start_date": "2012-01-17",
+        "description": "An armed conflict in Mali, involving separatists, Islamist groups, and the Malian government, exacerbated by French and UN military intervention."
+    },
+    {
+        "countries": "Sahel Conflict",
+        "start_date": "2012-01-01",
+        "description": "An ongoing conflict in the Sahel region of Africa, where multiple jihadist groups operate, including in Mali, Burkina Faso, and Niger."
+    },
+    {
+        "countries": "Mexico's Drug War",
+        "start_date": "2006-12-11",
+        "description": "A violent conflict between Mexican cartels and government forces, with widespread criminal violence and significant impact on civilian populations."
+    },
+    {
+        "countries": "Democratic Republic of Congo Conflict",
+        "start_date": "1998-08-02",
+        "description": "A complex war involving multiple armed groups, foreign involvement, and a humanitarian crisis in the eastern DRC."
+    },
+    {
+        "countries": "Colombian Armed Conflict",
+        "start_date": "1964-05-27",
+        "description": "A longstanding conflict involving the Colombian government, paramilitary groups, and left-wing guerilla movements, such as the FARC."
+    },
+    {
+        "countries": "Kurdish-Turkish Conflict",
+        "start_date": "1984-08-15",
+        "description": "The Turkish government and the Kurdish militant group PKK have been in conflict for decades, with ongoing violence and instability in southeastern Turkey."
+    },
+    {
+        "countries": "Venezuelan Crisis",
+        "start_date": "2013-04-01",
+        "description": "Political and economic turmoil in Venezuela that has led to violent protests, widespread government repression, and a humanitarian crisis."
+    },
+    {
+        "countries": "Haiti",
+        "start_date": "2024-03-01",
+        "description": "Haiti is facing increasing gang violence and political instability, leading to widespread displacement and humanitarian crises."
+    },
+    {
+        "countries": "Myanmar (Rakhine State)",
+        "start_date": "2023-11-13",
+        "description": "Renewed conflict between the Arakan Army and Myanmar's military has intensified, leading to civilian casualties and displacement."
+    },
+    {
+        "countries": "Ethiopia (Amhara)",
+        "start_date": "2023-08-05",
+        "description": "Clashes between Amhara militias and Ethiopian federal forces continue, with reports of mass arrests and human rights violations."
+    },
+    {
+        "countries": "Israel vs Iran",
+        "start_date": "2024-04-01",
+        "description": "Tensions between Israel and Iran have escalated into direct military engagements, raising concerns about a broader regional conflict."
+    },
+    {
+        "countries": "Sudan",
+        "start_date": "2023-04-15",
+        "description": "Ongoing conflict between the Sudanese Armed Forces and the Rapid Support Forces has led to a worsening humanitarian crisis."
+    },
+    {
+        "countries": "Taiwan Strait",
+        "start_date": "2022-08-01",
+        "description": "Increased military activity by China near Taiwan has heightened fears of a potential military conflict in the region."
+    },
+    {
+        "countries": "Kosovo-Serbia Border Tensions",
+        "start_date": "2022-12-01",
+        "description": "Recurring border clashes and political disputes between Serbia and Kosovo continue to threaten stability in the Balkans."
+    },
+    {
+        "countries": "Algeria-Morocco Border Tensions",
+        "start_date": "2021-08-24",
+        "description": "Diplomatic relations between Algeria and Morocco remain severed, with periodic border tensions and military build-ups."
+    }
 ]
