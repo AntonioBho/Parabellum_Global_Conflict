@@ -68,6 +68,53 @@
             padding: 20px;
             text-align: center;
         }
+        #switchButton {
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        border: none;
+        color: white;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(255, 65, 108, 0.3);
+        }
+        
+        #switchButton:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            box-shadow: 0 6px 15px rgba(255, 75, 43, 0.5);
+            transform: scale(1.05);
+        }
+        
+        /* Stile per il selettore */
+        #recordsPerPage {
+            background-color: #2c2c2c;
+            color: white;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ff416c;
+            border-radius: 10px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            transition: border 0.3s ease-in-out;
+        }
+        
+        /* Personalizzazione icona freccia */
+        #recordsPerPage {
+            background-image: url('freccia-giù.svg'); /* Cambia con il percorso corretto */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 14px;
+        }
+        
+        /* Hover effect */
+        #recordsPerPage:hover {
+            border-color: #ff4b2b;
+        }
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8712964960463408"
      crossorigin="anonymous"></script>
