@@ -61,6 +61,29 @@
         .pagination-buttons {
             margin-top: 10px;
         }
+        .pagination-buttons button {
+            background-color: #ff4c4c; /* Rosso acceso */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(255, 76, 76, 0.3);
+        }
+        
+        .pagination-buttons button:hover {
+            background-color: #ff1c1c; /* Rosso più scuro */
+            transform: scale(1.1);
+        }
+        
+        .pagination-buttons button:active {
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(255, 76, 76, 0.5);
+        }
         footer {
             margin-top: 50px;
             background-color: #333;
